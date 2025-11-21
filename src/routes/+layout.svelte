@@ -1,8 +1,11 @@
 <script lang="ts">
 	import Footer from '$lib/components/layout/footer/Footer.svelte';
 	import Header from '$lib/components/layout/header/Header.svelte';
+	import { loadAppData } from '$lib/store/appStore.svelte.js';
 	import '$lib/styles/global.css';
-	let { children } = $props();
+	let { children, data } = $props();
+	const { products, categories } = data.shopData;
+	loadAppData(products, categories);
 </script>
 
 <svelte:head>

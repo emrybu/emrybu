@@ -1,38 +1,9 @@
 <script lang="ts">
+	import { getCategories } from '$lib/store/appStore.svelte';
 	const { close } = $props();
 	let mainMenu = $state(true);
-	const additionalMenu = [
-		{
-			href: '/',
-			title: 'Категорія 1',
-			slug: '1'
-		},
-		{
-			href: '/',
-			title: 'Категорія 2',
-			slug: '2'
-		},
-		{
-			href: '/',
-			title: 'Категорія 3',
-			slug: '3'
-		},
-		{
-			href: '/',
-			title: 'Категорія 4',
-			slug: '4'
-		},
-		{
-			href: '/',
-			title: 'Категорія 5',
-			slug: '5'
-		},
-		{
-			href: '/',
-			title: 'Категорія 6',
-			slug: '6'
-		}
-	];
+
+	const categories = getCategories();
 </script>
 
 <div class="menu-content">
@@ -52,8 +23,9 @@
 			<a href="/orders" class="nav-link" onclick={close}>Мої замовлення</a>
 			<a href="/customer" class="nav-link" onclick={close}>Мої дані</a>
 		{:else}
-			{#each additionalMenu as menu (menu.slug)}
-				<a href={menu.href} class="nav-link" onclick={close}>{menu.title}</a>
+			{#each categories as category (category.slug)}
+				<a href={`/categories/${category.slug}`} class="nav-link" onclick={close}>{category.name}</a
+				>
 			{/each}
 		{/if}
 	</nav>

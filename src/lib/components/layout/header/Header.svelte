@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Menu from '../menu/Menu.svelte';
 	import MenuButton from '../menu/MenuButton.svelte';
-	import ActionIcon from '../ui/ActionIcon.svelte';
+	import ActionIcon from '../../ui/ActionIcon.svelte';
 	import Logo from '$lib/components/layout/icons/Logo.svelte';
 	import Bag from '$lib/components/layout/icons/Bag.svelte';
-	import Phone from '../ui/Phone.svelte';
+	import Phone from '../../ui/Phone.svelte';
 
 	let isMenuOpen = $state(false);
 
@@ -55,7 +55,8 @@
 		top: 0;
 		z-index: 100;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		background-color: rgba(var(--main-color-rgb), 0.1);
+		/* background-color: rgba(var(--main-color-rgb), 0.1); */
+		background-color: white;
 	}
 
 	.header-content {

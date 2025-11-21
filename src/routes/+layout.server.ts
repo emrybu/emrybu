@@ -1,5 +1,6 @@
-import type { InitData } from '$lib/types.js';
 import { API_SERVER_URL } from '$env/static/private';
+import type { InitData } from '$lib/types';
+
 import { error } from '@sveltejs/kit';
 
 interface ExpectedApiData {
