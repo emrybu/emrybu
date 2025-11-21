@@ -19,5 +19,13 @@
 </svelte:head>
 
 <Header />
-{@render children()}
+<div class="content-wrap">
+	{@render children()}
+</div>
 <Footer />
+
+<style>
+	.content-wrap {
+		margin: 0px 8px;
+	}
+</style>
